@@ -1,9 +1,5 @@
-import './style.css'
-import { setupCounter } from './counter.ts'
+import "./style.css";
+import { Hero } from "./components/hero";
 
-document.querySelector<HTMLDivElement>('#app')!.innerHTML = `
-  <div>
-  </div>
-`
-
-setupCounter(document.querySelector<HTMLButtonElement>('#counter')!)
+const app = document.querySelector<HTMLDivElement>("#app")!;
+app.appendChild(Hero());
