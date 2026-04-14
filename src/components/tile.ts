@@ -7,7 +7,7 @@ export type TileConfig = {
 export const Tile = (config: TileConfig): HTMLElement => {
   const link = document.createElement("a");
   link.className =
-    "relative flex items-center justify-center aspect-[3/4] max-h-[calc(100vh-6rem)] w-[min(480px,40vw)] max-md:w-auto max-md:h-[calc(60vh-2.5rem)] max-md:max-h-none rounded-xl overflow-hidden bg-[#f0ebe3] border-2 border-[#2a2a2a] no-underline text-[#2c2c2c] cursor-pointer transition-all duration-300 hover:scale-[1.03] hover:shadow-[0_8px_30px_rgba(0,0,0,0.15)]";
+    "relative flex items-center justify-center aspect-[3/4] max-h-[calc(100vh-6rem)] w-[min(480px,40vw)] max-md:w-auto max-md:h-[calc(49vh - 2rem)] max-md:max-h-none rounded-xl overflow-hidden bg-[#f0ebe3] border-2 border-[#2a2a2a] no-underline text-[#2c2c2c] cursor-pointer transition-all duration-300 hover:scale-[1.03] hover:shadow-[0_8px_30px_rgba(0,0,0,0.15)]";
 
   if (config.href) {
     link.href = config.href;
