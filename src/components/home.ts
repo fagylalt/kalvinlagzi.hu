@@ -14,7 +14,7 @@ export const Home = (): HTMLElement => {
     "inset 0 0 0 2px #5a1a1a, inset 0 0 0 10px #f5ebe0, inset 0 0 0 14px #5a1a1a";
 
   const grid = document.createElement("div");
-  grid.className = "grid grid-cols-2 gap-12 max-md:grid-cols-1 max-md:gap-4 max-md:justify-items-center";
+  grid.className = "grid grid-cols-2 gap-12 max-md:grid-cols-1 max-md:gap-4 max-md:py-6 max-md:justify-items-center max-md:h-full max-md:grid-rows-2";
 
   grid.appendChild(
     Tile({
