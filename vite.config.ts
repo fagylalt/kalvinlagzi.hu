@@ -1,3 +1,6 @@
+import tailwindcss from "@tailwindcss/vite";
+
 export default {
-   base: "/"
-  }
+  base: "/",
+  plugins: [tailwindcss()],
+};
