@@ -38,7 +38,7 @@ export const Tile = (config: TileConfig): HTMLElement => {
 
   const label = document.createElement("span");
   label.className =
-    "font-fancy relative z-10 self-center text-4xl max-md:text-xl tracking-wide px-10 py-5 max-md:px-6 max-md:py-2 bg-white/75 rounded-md backdrop-blur-sm";
+    "font-fancy font-bold relative z-10 self-center text-4xl max-md:text-xl tracking-wide whitespace-nowrap px-20 py-10 max-md:px-6 max-md:py-2 bg-white/75 rounded-md backdrop-blur-sm";
   label.textContent = config.label;
   link.appendChild(label);
 
