@@ -1,0 +1,5 @@
+@import "tailwindcss";
+
+.font-fancy {
+  font-family: "Playfair Display", serif;
+}

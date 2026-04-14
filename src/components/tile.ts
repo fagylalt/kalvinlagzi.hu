@@ -7,7 +7,7 @@ export type TileConfig = {
 export const Tile = (config: TileConfig): HTMLElement => {
   const link = document.createElement("a");
   link.className =
-    "relative flex items-center justify-center aspect-[3/4] max-h-[calc(100vh-6rem)] w-[min(480px,40vw)] max-md:w-auto max-md:h-full max-md:max-h-none rounded-xl overflow-hidden bg-[#f0ebe3] border-2 border-[#2a2a2a] no-underline text-[#2c2c2c] cursor-pointer transition-all duration-300 hover:scale-[1.03] hover:shadow-[0_8px_30px_rgba(0,0,0,0.15)]";
+    "group relative flex items-center justify-center aspect-[3/4] max-h-[calc(100vh-6rem)] w-[min(800px,46vw)] max-md:w-auto max-md:h-full max-md:max-h-none rounded-xl overflow-hidden bg-[#f0ebe3] border-2 border-[#2a2a2a] no-underline text-[#2c2c2c] cursor-pointer transition-all duration-300 hover:scale-[1.03] hover:shadow-[0_8px_30px_rgba(0,0,0,0.15)]";
 
   if (config.href) {
     link.href = config.href;
@@ -19,14 +19,26 @@ export const Tile = (config: TileConfig): HTMLElement => {
 
   if (config.backgroundImage) {
     const bg = document.createElement("div");
-    bg.className = `absolute inset-0 bg-cover bg-center${config.blur ? " blur-[2px] scale-105" : ""}`;
+    bg.className = `absolute inset-0 bg-cover bg-center transition-all duration-300${config.blur ? " blur-[2px] scale-105 group-hover:blur-none group-hover:scale-100" : ""}`;
     bg.style.backgroundImage = `url(${config.backgroundImage})`;
+
+    if (config.blur) {
+      link.addEventListener("touchstart", () => {
+        bg.classList.remove("blur-[2px]", "scale-105");
+        bg.classList.add("blur-none", "scale-100");
+      });
+      link.addEventListener("touchend", () => {
+        bg.classList.remove("blur-none", "scale-100");
+        bg.classList.add("blur-[2px]", "scale-105");
+      });
+    }
+
     link.appendChild(bg);
   }
 
   const label = document.createElement("span");
   label.className =
-    "relative z-10 self-center font-serif text-2xl max-md:text-xl tracking-wide px-4 py-2 max-md:px-6 max-md:py-2 bg-white/75 rounded-md backdrop-blur-sm";
+    "font-fancy relative z-10 self-center text-4xl max-md:text-xl tracking-wide px-10 py-5 max-md:px-6 max-md:py-2 bg-white/75 rounded-md backdrop-blur-sm";
   label.textContent = config.label;
   link.appendChild(label);
 
