@@ -12,7 +12,7 @@ export const Hero = (): HTMLElement => {
   const back = document.createElement("a");
   back.href = "#";
   back.className =
-    "absolute top-6 left-6 font-serif text-base text-[#2c2c2c] no-underline px-3 py-1.5 bg-white/75 rounded-md backdrop-blur-sm transition-colors hover:bg-white/95 z-10";
+    "absolute top-6 left-6 md:top-8 md:left-8 font-serif text-base md:text-2xl text-[#2c2c2c] no-underline px-3 py-1.5 md:px-6 md:py-3 bg-white/75 rounded-md backdrop-blur-sm transition-colors hover:bg-white/95 z-10";
   back.textContent = "← Vissza";
   inner.appendChild(back);
 
