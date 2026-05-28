@@ -6,7 +6,7 @@ const app = document.querySelector<HTMLDivElement>("#app")!;
 
 const routes: Record<string, () => HTMLElement> = {
   "": Home,
-  "save-the-date": Hero,
+  "program": Hero,
 };
 
 function render() {

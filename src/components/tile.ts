@@ -7,7 +7,7 @@ export type TileConfig = {
 export const Tile = (config: TileConfig): HTMLElement => {
   const link = document.createElement("a");
   link.className =
-    "group relative flex items-center justify-center aspect-[3/4] max-h-[calc(100vh-6rem)] w-[min(800px,46vw)] max-md:w-auto max-md:h-full max-md:max-h-none rounded-xl overflow-hidden bg-[#f0ebe3] border-2 border-[#2a2a2a] no-underline text-[#2c2c2c] cursor-pointer transition-all duration-300 hover:scale-[1.03] hover:shadow-[0_8px_30px_rgba(0,0,0,0.15)]";
+    "group relative flex items-center justify-center aspect-[3/4] w-[min(480px,30vw)] max-xl:w-[min(280px,38vw)] rounded-xl overflow-hidden bg-[#f0ebe3] border-2 border-[#2a2a2a] no-underline text-[#2c2c2c] cursor-pointer transition-all duration-300 hover:scale-[1.03] hover:shadow-[0_8px_30px_rgba(0,0,0,0.15)]";
 
   if (config.href) {
     link.href = config.href;
@@ -38,7 +38,7 @@ export const Tile = (config: TileConfig): HTMLElement => {
 
   const label = document.createElement("span");
   label.className =
-    "font-fancy font-bold relative z-10 self-center text-4xl max-md:text-xl tracking-wide whitespace-nowrap px-20 py-10 max-md:px-6 max-md:py-2 bg-white/75 rounded-md backdrop-blur-sm";
+    "font-fancy font-bold relative z-10 self-center text-3xl max-xl:text-base max-md:text-sm tracking-wide whitespace-nowrap px-10 py-5 max-xl:px-4 max-xl:py-2 max-md:px-3 max-md:py-1.5 bg-white/75 rounded-md backdrop-blur-sm";
   label.textContent = config.label;
   link.appendChild(label);
 
